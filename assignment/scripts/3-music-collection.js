@@ -42,3 +42,17 @@ function findByArtist(artist){
 console.log(findByArtist('NSP'));
 console.log(findByArtist('Eminem'));
 console.log(findByArtist('Wookiefoot'));
+
+function search(question){
+    let results = [];
+    for(let i=0; i<=collection.length-1; i++){
+        if(question === collection[i].Title || question === collection[i].Artist || question === collection[i].YearPublished){
+            results.push(collection[i])
+        }
+    }
+    return results;
+}
+
+console.log(search(2020));
+console.log(search(1991));
+console.log(search('The Prophecy'));
