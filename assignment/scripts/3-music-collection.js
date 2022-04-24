@@ -28,3 +28,17 @@ function showCollection(array){
 }
 
 showCollection(collection);
+
+function findByArtist(artist){
+    let results = [];
+    for(let albums in collection){
+        if (artist === collection[albums].Artist){
+            results.push(collection[albums])
+        }
+    }
+    return results;
+}
+
+console.log(findByArtist('NSP'));
+console.log(findByArtist('Eminem'));
+console.log(findByArtist('Wookiefoot'));
