@@ -19,3 +19,12 @@ console.log(addToCollection('Professional Rapper', 'Lil Dicky', 2015));
 console.log(addToCollection('Confessions of a Dangerous Mind', 'Logic', 2019));
 console.log(addToCollection('Music to be Murdered by', 'Eminem', 2020));
 console.log(collection);
+
+function showCollection(array){
+    console.log(array.length);
+    for (let albums in array){
+        console.log(`${array[albums].Title} by ${array[albums].Artist}, published in ${array[albums].YearPublished} `);
+    }
+}
+
+showCollection(collection);
