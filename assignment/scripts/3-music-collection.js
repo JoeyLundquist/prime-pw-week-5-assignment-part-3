@@ -46,7 +46,7 @@ console.log(findByArtist('Wookiefoot'));
 function search(query){
     let results = [];
     for(let i=0; i<=collection.length-1; i++){
-        if(query == null || query == ""){
+        if(query == null || query == ""){//I used the == instead of ===, when i tried === it did not work.
             results = collection
         }
         else if(query === collection[i].Title || query === collection[i].Artist || query === collection[i].YearPublished){
