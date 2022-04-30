@@ -43,22 +43,29 @@ console.log(findByArtist('NSP'));
 console.log(findByArtist('Eminem'));
 console.log(findByArtist('Wookiefoot'));
 
+let searchParameter = {artist: null, year: null}
+
 function search(query){
     let results = [];
     for(let i=0; i<=collection.length-1; i++){
-        if(query == null || query == ""){//I used the == instead of ===, when i tried === it did not work.
+        if(query == null || query == "" || (query.artist == null && query.year == null)){//I used the == instead of ===, when i tried === it did not work.
             results = collection
         }
-        else if(query === collection[i].Title || query === collection[i].Artist || query === collection[i].YearPublished){
+        else if(query.artist === collection[i].Artist && query.year === collection[i].YearPublished){
             results.push(collection[i])
         }
     }
     return results;
 }
 
-console.log('Testing my search function')
-console.log(search(2020));
-console.log(search(1991));
-console.log(search('The Prophecy'));
-console.log(search('NSP'));
+
+
+console.log('Testing my search function');
+console.log(search(searchParameter));
+searchParameter.artist = 'NSP';
+searchParameter.year = 2020;
+console.log(search(searchParameter));
+searchParameter.artist = 'Eminem';
+searchParameter.year = 1999;
+console.log(search(searchParameter));
 console.log(search());
