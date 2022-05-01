@@ -2,25 +2,25 @@ console.log('***** Music Collection *****')
 
 let collection = [];
 
-function addToCollection(title, artist, yearPublished, tracks){
+function addToCollection(title, artist, yearPublished, /*tracks*/){
     let album = {
         Title: title,
         Artist: artist, 
         YearPublished: yearPublished,
-        Tracks: tracks
+        //Tracks: tracks
     }
     collection.push(album);
     return album;
 }
 
-let prophTracks =[
+/*let prophTracks =[
     {trackName: 'Intro', duration: '1:11'},
     {trackName: 'The Mystic Crystal', duration: '11:54'},
     {trackName: 'It\'s Bedtime', duration: '3:11'},
     {trackName: 'The Wishing Bear',}
-];
+];*/
 
-console.log(addToCollection('The Prophecy', 'NSP', 2020, prophTracks));
+console.log(addToCollection('The Prophecy', 'NSP', 2020));
 console.log(addToCollection('Cool Patrol', 'NSP', 2018));
 console.log(addToCollection('Cake and Cognac', 'Yung Gravy', 2022));
 console.log(addToCollection('Professional Rapper', 'Lil Dicky', 2015));
@@ -31,9 +31,10 @@ console.log(collection);
 function showCollection(array){
     console.log(array.length);
     for (let albums in array){
-        console.log(`${array[albums].Title} by ${array[albums].Artist}, published in ${array[albums].YearPublished} `);
+        console.log(`${array[albums].Title} by ${array[albums].Artist}, published in ${array[albums].YearPublished}:`);
     }
-}
+}// I am unable to figure out how to do the tracks stretch goal. Not gonna exceed expectations this week...
+
 
 showCollection(collection);
 
